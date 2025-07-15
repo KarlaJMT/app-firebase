@@ -1,6 +1,6 @@
 import React, { createContext, useState } from 'react';
 import { View, Text } from 'react-native'
-import { collection, addDoc } from 'firebase/firestore'
+import { collection, addDoc, getDocs, doc, deleteDoc, updateDoc } from 'firebase/firestore'
 import { db } from '../../src/script/configFirebase';
 
 export const estadoGlobalProductos = createContext();
@@ -24,7 +24,7 @@ export default function contextProductos({ children }) {
 
     const [ dataproductos, setDataproductos ] = useState([])
     return (
-        <estadoGlobalProductos.Provider value={{}}>
+        <estadoGlobalProductos.Provider value={{ dataproductos }}>
             { children }
         </estadoGlobalProductos.Provider>
     )
