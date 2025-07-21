@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native';
-import React from 'react';
-import { Button } from 'react-native-web';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import React, { useContext } from 'react';
+import { estadoGlobalProductos } from '../../context/ContextProductos';
+
 
 export default function ScreenHome() {
 
-  
-
+  const [dataproductos, mandardatos, obtenerdatos] = useContext(estadoGlobalProductos);
 
   return (
     <View>
@@ -13,8 +13,22 @@ export default function ScreenHome() {
 
       <Button
         title='subir'
-        onPress={() => subirdato()}
+        onPress={() => mandardatos()}
       />
+
+      <Button
+        title='obtener'
+        onPress={() => obtenerdatos()}
+      />
+
+      {
+        dataproductos.map((producto, index) => (
+          <View key={index}>
+            <Text> {producto.nombre} | {producto.precio} | {producto.stock} </Text>
+          </View>
+
+        ))
+      }
 
     </View>
   )
