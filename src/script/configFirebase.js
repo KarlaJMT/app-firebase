@@ -9,13 +9,13 @@ const firebaseConfig = {
   storageBucket: "pagos-nx-6ec06.firebasestorage.app",
   messagingSenderId: "1071726610999",
   appId: "1:1071726610999:web:093270a1739b95d12f0db2",
-  databaseURL: 'https://pagos-nx-default-rtdb.firebaseio.com'
+  databaseURL: 'https://pagos-nx-6ec06-default-rtdb.firebaseio.com/'
 };
 
-// Evita error de instancia duplicada
+
 const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
 
-// 🚨 Usa initializeFirestore con estas opciones:
+
 const db = initializeFirestore(app, {
   experimentalForceLongPolling: true,
   useFetchStreams: false

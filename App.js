@@ -1,14 +1,13 @@
 import React from 'react';
 import Navegacion from './Navegacion';
-import contextProductos from './src/context/contextProductos'
+import ContextProductos from './src/context/ContextProductos';
 
 
 export default function App() {
   return (
-    <contextProductos>
-      <Navegacion/>
-    </contextProductos>
-    
+    <ContextProductos>
+      <Navegacion />
+    </ContextProductos>
   );
 }
 
